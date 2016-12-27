@@ -55,6 +55,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		615671E31E12D086009199B1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F755397E1E0C30A10040D715 /* MasterViewController.h */,
+				F755397F1E0C30A10040D715 /* MasterViewController.m */,
+				F75539811E0C30A10040D715 /* DetailViewController.h */,
+				F75539821E0C30A10040D715 /* DetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		615671E41E12D093009199B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F75539921E0C336F0040D715 /* BlueToothConnector.h */,
+				F75539931E0C336F0040D715 /* BlueToothConnector.m */,
+				615671E01E117024009199B1 /* PeripheralData.h */,
+				615671E11E117024009199B1 /* PeripheralData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		615671E51E12D099009199B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F70B5FB41E0C462D007A336A /* PeripheralTableViewCell.h */,
+				F70B5FB51E0C462D007A336A /* PeripheralTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		F755396C1E0C30A00040D715 = {
 			isa = PBXGroup;
 			children = (
@@ -74,24 +105,17 @@
 		F75539771E0C30A10040D715 /* BlueToothExample */ = {
 			isa = PBXGroup;
 			children = (
+				615671E51E12D099009199B1 /* Views */,
+				615671E41E12D093009199B1 /* Model */,
+				615671E31E12D086009199B1 /* Controllers */,
 				F755397B1E0C30A10040D715 /* AppDelegate.h */,
 				F755397C1E0C30A10040D715 /* AppDelegate.m */,
-				F755397E1E0C30A10040D715 /* MasterViewController.h */,
-				F755397F1E0C30A10040D715 /* MasterViewController.m */,
-				F75539811E0C30A10040D715 /* DetailViewController.h */,
-				F75539821E0C30A10040D715 /* DetailViewController.m */,
-				F70B5FB41E0C462D007A336A /* PeripheralTableViewCell.h */,
-				F70B5FB51E0C462D007A336A /* PeripheralTableViewCell.m */,
-				F75539921E0C336F0040D715 /* BlueToothConnector.h */,
-				F75539931E0C336F0040D715 /* BlueToothConnector.m */,
 				F75539841E0C30A10040D715 /* Main.storyboard */,
 				F75539871E0C30A10040D715 /* Assets.xcassets */,
 				F75539891E0C30A10040D715 /* LaunchScreen.storyboard */,
 				F755398C1E0C30A10040D715 /* Info.plist */,
 				F75539951E0C35DB0040D715 /* Libraries */,
 				F75539781E0C30A10040D715 /* Supporting Files */,
-				615671E01E117024009199B1 /* PeripheralData.h */,
-				615671E11E117024009199B1 /* PeripheralData.m */,
 			);
 			path = BlueToothExample;
 			sourceTree = "<group>";
