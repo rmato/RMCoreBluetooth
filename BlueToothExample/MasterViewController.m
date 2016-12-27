@@ -13,7 +13,8 @@
 #import "DetailViewController.h"
 
 @interface MasterViewController ()
-@property BlueToothConnector *bluetoothConnector;
+@property (strong, nonatomic) BlueToothConnector *bluetoothConnector;
+@property (strong, nonatomic) CBPeripheral *connectedPeripheral;
 @end
 
 @implementation MasterViewController
@@ -120,9 +121,8 @@ static const NSString *specialUUID = @"special UUID";
     });
 }
 
-
 - (void)connectedToPeripheral:(CBPeripheral*)peripheral {
-    
+    self.connectedPeripheral = peripheral;
 }
 
 - (void)didDiscoverServices:(NSArray*)services forPeripheral:(CBPeripheral*)peripheral {
@@ -133,6 +133,9 @@ static const NSString *specialUUID = @"special UUID";
     for (CBCharacteristic *charcteristic in characteristics) {
         if ([charcteristic.UUID.UUIDString isEqualToString:[specialUUID copy]])  {
             
+            NSString *message = [NSString stringWithFormat:@"Characteristic:%@ , Value:%@", charcteristic.UUID.UUIDString, charcteristic.value];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Characteristic found!" message:message preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:alert animated:YES completion:nil];
         }
         
     }

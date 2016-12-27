@@ -50,14 +50,13 @@
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     
-//    NSString *localName = [advertisementData objectForKey:CBAdvertisementDataLocalNameKey];
-//    if ([localName length] > 0) {
-  //      NSLog(@"Found Peripheral: %@", localName);
+   NSString *localName = [advertisementData objectForKey:CBAdvertisementDataLocalNameKey];
+    if ([localName length] > 0) {
+        NSLog(@"Found Peripheral: %@", localName);
         [self.peripherals addObject:[[PeripheralData alloc] initWithPeripheral:peripheral andRRSI:RSSI]];
         peripheral.delegate = self;
         [self.delegate connectorDiscoveredNewPeripheral:peripheral];
-//        [self.centralManager connectPeripheral:peripheral options:nil];
-//    }
+    }
 }
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
